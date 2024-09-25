@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "fs": "^0.0.1-security"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.14",
+    "chokidar": "^3.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "node-fetch": "^3.3.2",
+    "serverless-express": "^2.0.12",
+    "zip-dir": "^2.0.0"
+  }
+}
