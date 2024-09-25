@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+</head>
+<body>
+    <div class="cat">
+        <h1>Facts About Cats</h1>
+        <p id="catfacts"> </p> 
+        <h1>Bitcoin price</h1>
+        <p id="Bitcoin price" style="color:red;"> </p> 
+        <h1>FOOTBALL SCORE</h1>
+        <p id="football"  > </p> 
+    </div>
+    <script>
+        async function factaboutcats() {
+            const facts = 'https://catfact.ninja/fact';
+            const response = await fetch(facts);
+            const data = await response.json();
+            console.log(data.fact);
+            document.getElementById('catfacts').innerHTML = data.fact; 
+        } 
+        document.addEventListener('DOMContentLoaded', factaboutcats);
+        async function bitcoin_price() {
+            const bit_url='https://api.coindesk.com/v1/bpi/currentprice.json'
+            const response=await fetch(bit_url);
+            const data=await response.json();
+            data2=data.bpi.USD;
+            console.log(data2)
+            document.getElementById('Bitcoin price').innerHTML = data2.rate;
+        }
+        document.addEventListener('DOMContentLoaded', bitcoin_price);
+        async function age_predect() {
+            const url='https://api.agify.io?name=Amaan'
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log(data)
+        }
+        age_predect()
+    </script>
+</body>
+</html>

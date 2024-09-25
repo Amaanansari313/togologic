@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Set background color to black */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for Cards */
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff; /* Keep card background white for contrast */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    padding: 20px;
+    width: 30%; /* Set width for larger screens */
+    text-align: center;
+}
+
+/* Heading Styles */
+.card h1 {
+    display: inline-flex; /* Align icon and text horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 24px;
+    color: #333; /* Dark gray color for text */
+    transition: transform 0.3s ease; /* Smooth transition for heading */
+}
+
+/* Icon Styles in Headings */
+.icon {
+    margin-right: 10px; /* Add some space between icon and text */
+    transition: transform 0.3s ease; /* Smooth transition for the icon */
+}
+
+/* Hover Effect for Headings and Icons */
+.card h1:hover {
+    transform: scale(1.2); /* Scale up both icon and text on hover */
+}
+
+/* Link Styles in Cards */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff; /* Button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hover Effect for Card Links */
+.card a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222; /* Dark background for footer */
+    color: white; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto; /* Center align content */
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Social Media Icons Container */
+.socials {
+    margin-top: 10px;
+}
+
+/* Social Media Icon Styles */
+.socials a {
+    color: white; /* White icons */
+    margin: 0 10px; /* Space between icons */
+    font-size: 20px; /* Size of the icons */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Social Media Icons */
+.socials a:hover {
+    transform: scale(1.2); /* Scale up on hover */
+    color: #007bff; /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: 45%; /* Adjust width for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width for mobile devices */
+    }
+}
