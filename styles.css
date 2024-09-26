@@ -4,13 +4,18 @@ body {
     background-color: #000; /* Set background color to black */
     margin: 0;
     padding: 20px;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure full height of viewport */
 }
 
 /* Container for Cards */
 .container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align cards horizontally */
+    justify-content: center; /* Center align cards vertically */
+    flex-grow: 1; /* Allow container to grow and fill space */
 }
 
 /* Card Styles */
@@ -20,7 +25,8 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin: 15px;
     padding: 20px;
-    width: 30%; /* Set width for larger screens */
+    width: 80%; /* Set width for smaller screens */
+    max-width: 400px; /* Limit width for larger screens */
     text-align: center;
 }
 
@@ -99,12 +105,62 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .card {
-        width: 45%; /* Adjust width for tablets */
+        width: 90%; /* Adjust width for tablets */
     }
 }
 
 @media (max-width: 480px) {
     .card {
-        width: 100%; /* Full width for mobile devices */
+        width: 95%; /* Full width for mobile devices */
+    }
+}
+/* General Styles for Animated Text */
+.animated-text {
+    font-size: 80px; /* Font size for visibility */
+    font-style: italic; /* Italic text */
+    color: #00FFFF; /* Bright Cyan color */
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+}
+
+/* Left Text Styles */
+.left {
+    left: 30px; /* Position from the left side */
+    animation: zoom-in-out-left 3s infinite; /* Animation for zooming in and out */
+}
+
+/* Right Text Styles */
+.right {
+    right: 30px; /* Position from the right side */
+    animation: zoom-in-out-right 3s infinite; /* Animation for zooming in and out */
+}
+
+/* Keyframes for Left Zoom In and Out Animation */
+@keyframes zoom-in-out-left {
+    0%, 100% {
+        transform: translateY(-50%) scale(1); /* Start at normal size */
+    }
+    25% {
+        transform: translateY(-50%) scale(1.5); /* Zoom in */
+    }
+    75% {
+        transform: translateY(-50%) scale(1); /* Zoom out back to normal size */
+    }
+}
+
+/* Keyframes for Right Zoom In and Out Animation */
+@keyframes zoom-in-out-right {
+    0%, 100% {
+        transform: translateY(-50%) scale(1); /* Start at normal size */
+    }
+    25% {
+        transform: translateY(-50%) scale(1); /* Stay normal size initially */
+    }
+    50% {
+        transform: translateY(-50%) scale(1.5); /* Zoom in at halfway point */
+    }
+    75% {
+        transform: translateY(-50%) scale(1); /* Zoom out back to normal size */
     }
 }
